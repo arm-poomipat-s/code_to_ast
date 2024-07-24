@@ -1,0 +1,842 @@
+Node "Program" (2:0, 21:26)
+  body: Array [
+    Node "FunctionDeclaration" (2:0, 8:1)
+      async: false
+      body: Node "BlockStatement" (2:28, 8:1)
+        body: Array [
+          Node "IfStatement" (3:4, 7:5)
+            alternate: Node "BlockStatement" (5:11, 7:5)
+              body: Array [
+                Node "ReturnStatement" (6:8, 6:21)
+                  argument: Node "BinaryExpression" (6:15, 6:20)
+                    left: Node "Identifier" (6:15, 6:16)
+                      name: "x"
+                      range: Array [
+                        99,
+                        100,
+                      ]
+                    operator: "+"
+                    range: Array [
+                      99,
+                      104,
+                    ]
+                    right: Node "Literal" (6:19, 6:20)
+                      range: Array [
+                        103,
+                        104,
+                      ]
+                      raw: "2"
+                      value: 2
+                  range: Array [
+                    92,
+                    105,
+                  ],
+              ]
+              range: Array [
+                82,
+                111,
+              ]
+            consequent: Node "BlockStatement" (3:16, 5:5)
+              body: Array [
+                Node "ReturnStatement" (4:8, 4:21)
+                  argument: Node "BinaryExpression" (4:15, 4:20)
+                    left: Node "Identifier" (4:15, 4:16)
+                      name: "x"
+                      range: Array [
+                        64,
+                        65,
+                      ]
+                    operator: "*"
+                    range: Array [
+                      64,
+                      69,
+                    ]
+                    right: Node "Literal" (4:19, 4:20)
+                      range: Array [
+                        68,
+                        69,
+                      ]
+                      raw: "2"
+                      value: 2
+                  range: Array [
+                    57,
+                    70,
+                  ],
+              ]
+              range: Array [
+                47,
+                76,
+              ]
+            range: Array [
+              35,
+              111,
+            ]
+            test: Node "BinaryExpression" (3:8, 3:14)
+              left: Node "Identifier" (3:8, 3:9)
+                name: "x"
+                range: Array [
+                  39,
+                  40,
+                ]
+              operator: ">"
+              range: Array [
+                39,
+                45,
+              ]
+              right: Node "Literal" (3:12, 3:14)
+                range: Array [
+                  43,
+                  45,
+                ]
+                raw: "10"
+                value: 10,
+        ]
+        range: Array [
+          29,
+          113,
+        ]
+      expression: false
+      generator: false
+      id: Node "Identifier" (2:9, 2:24)
+        name: "exampleFunction"
+        range: Array [
+          10,
+          25,
+        ]
+      params: Array [
+        Node "Identifier" (2:25, 2:26)
+          name: "x"
+          range: Array [
+            26,
+            27,
+          ],
+      ]
+      range: Array [
+        1,
+        113,
+      ],
+    Node "ClassDeclaration" (10:0, 18:1)
+      body: Node "ClassBody" (10:19, 18:1)
+        body: Array [
+          Node "MethodDefinition" (11:4, 13:5)
+            computed: false
+            key: Node "Identifier" (11:4, 11:15)
+              name: "constructor"
+              range: Array [
+                140,
+                151,
+              ]
+            kind: "constructor"
+            range: Array [
+              140,
+              194,
+            ]
+            static: false
+            value: Node "FunctionExpression" (11:15, 13:5)
+              async: false
+              body: Node "BlockStatement" (11:23, 13:5)
+                body: Array [
+                  Node "ExpressionStatement" (12:8, 12:27)
+                    expression: Node "AssignmentExpression" (12:8, 12:26)
+                      left: Node "MemberExpression" (12:8, 12:18)
+                        computed: false
+                        object: Node "ThisExpression" (12:8, 12:12)
+                          range: Array [
+                            169,
+                            173,
+                          ]
+                        property: Node "Identifier" (12:13, 12:18)
+                          name: "value"
+                          range: Array [
+                            174,
+                            179,
+                          ]
+                        range: Array [
+                          169,
+                          179,
+                        ]
+                      operator: "="
+                      range: Array [
+                        169,
+                        187,
+                      ]
+                      right: Node "Identifier" (12:21, 12:26)
+                        name: "value"
+                        range: Array [
+                          182,
+                          187,
+                        ]
+                    range: Array [
+                      169,
+                      188,
+                    ],
+                ]
+                range: Array [
+                  159,
+                  194,
+                ]
+              expression: false
+              generator: false
+              id: null
+              params: Array [
+                Node "Identifier" (11:16, 11:21)
+                  name: "value"
+                  range: Array [
+                    152,
+                    157,
+                  ],
+              ]
+              range: Array [
+                151,
+                194,
+              ],
+          Node "MethodDefinition" (15:4, 17:5)
+            computed: false
+            key: Node "Identifier" (15:4, 15:11)
+              name: "display"
+              range: Array [
+                200,
+                207,
+              ]
+            kind: "method"
+            range: Array [
+              200,
+              268,
+            ]
+            static: false
+            value: Node "FunctionExpression" (15:11, 17:5)
+              async: false
+              body: Node "BlockStatement" (15:14, 17:5)
+                body: Array [
+                  Node "ExpressionStatement" (16:8, 16:50)
+                    expression: Node "CallExpression" (16:8, 16:49)
+                      arguments: Array [
+                        Node "TemplateLiteral" (16:20, 16:48)
+                          expressions: Array [
+                            Node "MemberExpression" (16:36, 16:46)
+                              computed: false
+                              object: Node "ThisExpression" (16:36, 16:40)
+                                range: Array [
+                                  248,
+                                  252,
+                                ]
+                              property: Node "Identifier" (16:41, 16:46)
+                                name: "value"
+                                range: Array [
+                                  253,
+                                  258,
+                                ]
+                              range: Array [
+                                248,
+                                258,
+                              ],
+                          ]
+                          quasis: Array [
+                            Node "TemplateElement" (16:20, 16:36)
+                              range: Array [
+                                232,
+                                248,
+                              ]
+                              tail: false
+                              value: Object {
+                                "cooked": "The value is ",
+                                "raw": "The value is ",
+                              },
+                            Node "TemplateElement" (16:46, 16:48)
+                              range: Array [
+                                258,
+                                260,
+                              ]
+                              tail: true
+                              value: Object {
+                                "cooked": "",
+                                "raw": "",
+                              },
+                          ]
+                          range: Array [
+                            232,
+                            260,
+                          ],
+                      ]
+                      callee: Node "MemberExpression" (16:8, 16:19)
+                        computed: false
+                        object: Node "Identifier" (16:8, 16:15)
+                          name: "console"
+                          range: Array [
+                            220,
+                            227,
+                          ]
+                        property: Node "Identifier" (16:16, 16:19)
+                          name: "log"
+                          range: Array [
+                            228,
+                            231,
+                          ]
+                        range: Array [
+                          220,
+                          231,
+                        ]
+                      range: Array [
+                        220,
+                        261,
+                      ]
+                    range: Array [
+                      220,
+                      262,
+                    ],
+                ]
+                range: Array [
+                  210,
+                  268,
+                ]
+              expression: false
+              generator: false
+              id: null
+              params: Array []
+              range: Array [
+                207,
+                268,
+              ],
+        ]
+        range: Array [
+          134,
+          270,
+        ]
+      id: Node "Identifier" (10:6, 10:18)
+        name: "ExampleClass"
+        range: Array [
+          121,
+          133,
+        ]
+      range: Array [
+        115,
+        270,
+      ]
+      superClass: null,
+    Node "VariableDeclaration" (20:0, 20:45)
+      declarations: Array [
+        Node "VariableDeclarator" (20:6, 20:44)
+          id: Node "Identifier" (20:6, 20:21)
+            name: "exampleInstance"
+            range: Array [
+              278,
+              293,
+            ]
+          init: Node "NewExpression" (20:24, 20:44)
+            arguments: Array [
+              Node "Literal" (20:41, 20:43)
+                range: Array [
+                  313,
+                  315,
+                ]
+                raw: "42"
+                value: 42,
+            ]
+            callee: Node "Identifier" (20:28, 20:40)
+              name: "ExampleClass"
+              range: Array [
+                300,
+                312,
+              ]
+            range: Array [
+              296,
+              316,
+            ]
+          range: Array [
+            278,
+            316,
+          ],
+      ]
+      kind: "const"
+      range: Array [
+        272,
+        317,
+      ],
+    Node "ExpressionStatement" (21:0, 21:26)
+      expression: Node "CallExpression" (21:0, 21:25)
+        arguments: Array []
+        callee: Node "MemberExpression" (21:0, 21:23)
+          computed: false
+          object: Node "Identifier" (21:0, 21:15)
+            name: "exampleInstance"
+            range: Array [
+              318,
+              333,
+            ]
+          property: Node "Identifier" (21:16, 21:23)
+            name: "display"
+            range: Array [
+              334,
+              341,
+            ]
+          range: Array [
+            318,
+            341,
+          ]
+        range: Array [
+          318,
+          343,
+        ]
+      range: Array [
+        318,
+        344,
+      ],
+  ]
+  comments: Array []
+  range: Array [
+    1,
+    344,
+  ]
+  sourceType: "script"
+  tokens: Array [
+    Node "Keyword" (2:0, 2:8)
+      range: Array [
+        1,
+        9,
+      ]
+      value: "function",
+    Node "Identifier" (2:9, 2:24)
+      range: Array [
+        10,
+        25,
+      ]
+      value: "exampleFunction",
+    Node "Punctuator" (2:24, 2:25)
+      range: Array [
+        25,
+        26,
+      ]
+      value: "(",
+    Node "Identifier" (2:25, 2:26)
+      range: Array [
+        26,
+        27,
+      ]
+      value: "x",
+    Node "Punctuator" (2:26, 2:27)
+      range: Array [
+        27,
+        28,
+      ]
+      value: ")",
+    Node "Punctuator" (2:28, 2:29)
+      range: Array [
+        29,
+        30,
+      ]
+      value: "{",
+    Node "Keyword" (3:4, 3:6)
+      range: Array [
+        35,
+        37,
+      ]
+      value: "if",
+    Node "Punctuator" (3:7, 3:8)
+      range: Array [
+        38,
+        39,
+      ]
+      value: "(",
+    Node "Identifier" (3:8, 3:9)
+      range: Array [
+        39,
+        40,
+      ]
+      value: "x",
+    Node "Punctuator" (3:10, 3:11)
+      range: Array [
+        41,
+        42,
+      ]
+      value: ">",
+    Node "Numeric" (3:12, 3:14)
+      range: Array [
+        43,
+        45,
+      ]
+      value: "10",
+    Node "Punctuator" (3:14, 3:15)
+      range: Array [
+        45,
+        46,
+      ]
+      value: ")",
+    Node "Punctuator" (3:16, 3:17)
+      range: Array [
+        47,
+        48,
+      ]
+      value: "{",
+    Node "Keyword" (4:8, 4:14)
+      range: Array [
+        57,
+        63,
+      ]
+      value: "return",
+    Node "Identifier" (4:15, 4:16)
+      range: Array [
+        64,
+        65,
+      ]
+      value: "x",
+    Node "Punctuator" (4:17, 4:18)
+      range: Array [
+        66,
+        67,
+      ]
+      value: "*",
+    Node "Numeric" (4:19, 4:20)
+      range: Array [
+        68,
+        69,
+      ]
+      value: "2",
+    Node "Punctuator" (4:20, 4:21)
+      range: Array [
+        69,
+        70,
+      ]
+      value: ";",
+    Node "Punctuator" (5:4, 5:5)
+      range: Array [
+        75,
+        76,
+      ]
+      value: "}",
+    Node "Keyword" (5:6, 5:10)
+      range: Array [
+        77,
+        81,
+      ]
+      value: "else",
+    Node "Punctuator" (5:11, 5:12)
+      range: Array [
+        82,
+        83,
+      ]
+      value: "{",
+    Node "Keyword" (6:8, 6:14)
+      range: Array [
+        92,
+        98,
+      ]
+      value: "return",
+    Node "Identifier" (6:15, 6:16)
+      range: Array [
+        99,
+        100,
+      ]
+      value: "x",
+    Node "Punctuator" (6:17, 6:18)
+      range: Array [
+        101,
+        102,
+      ]
+      value: "+",
+    Node "Numeric" (6:19, 6:20)
+      range: Array [
+        103,
+        104,
+      ]
+      value: "2",
+    Node "Punctuator" (6:20, 6:21)
+      range: Array [
+        104,
+        105,
+      ]
+      value: ";",
+    Node "Punctuator" (7:4, 7:5)
+      range: Array [
+        110,
+        111,
+      ]
+      value: "}",
+    Node "Punctuator" (8:0, 8:1)
+      range: Array [
+        112,
+        113,
+      ]
+      value: "}",
+    Node "Keyword" (10:0, 10:5)
+      range: Array [
+        115,
+        120,
+      ]
+      value: "class",
+    Node "Identifier" (10:6, 10:18)
+      range: Array [
+        121,
+        133,
+      ]
+      value: "ExampleClass",
+    Node "Punctuator" (10:19, 10:20)
+      range: Array [
+        134,
+        135,
+      ]
+      value: "{",
+    Node "Identifier" (11:4, 11:15)
+      range: Array [
+        140,
+        151,
+      ]
+      value: "constructor",
+    Node "Punctuator" (11:15, 11:16)
+      range: Array [
+        151,
+        152,
+      ]
+      value: "(",
+    Node "Identifier" (11:16, 11:21)
+      range: Array [
+        152,
+        157,
+      ]
+      value: "value",
+    Node "Punctuator" (11:21, 11:22)
+      range: Array [
+        157,
+        158,
+      ]
+      value: ")",
+    Node "Punctuator" (11:23, 11:24)
+      range: Array [
+        159,
+        160,
+      ]
+      value: "{",
+    Node "Keyword" (12:8, 12:12)
+      range: Array [
+        169,
+        173,
+      ]
+      value: "this",
+    Node "Punctuator" (12:12, 12:13)
+      range: Array [
+        173,
+        174,
+      ]
+      value: ".",
+    Node "Identifier" (12:13, 12:18)
+      range: Array [
+        174,
+        179,
+      ]
+      value: "value",
+    Node "Punctuator" (12:19, 12:20)
+      range: Array [
+        180,
+        181,
+      ]
+      value: "=",
+    Node "Identifier" (12:21, 12:26)
+      range: Array [
+        182,
+        187,
+      ]
+      value: "value",
+    Node "Punctuator" (12:26, 12:27)
+      range: Array [
+        187,
+        188,
+      ]
+      value: ";",
+    Node "Punctuator" (13:4, 13:5)
+      range: Array [
+        193,
+        194,
+      ]
+      value: "}",
+    Node "Identifier" (15:4, 15:11)
+      range: Array [
+        200,
+        207,
+      ]
+      value: "display",
+    Node "Punctuator" (15:11, 15:12)
+      range: Array [
+        207,
+        208,
+      ]
+      value: "(",
+    Node "Punctuator" (15:12, 15:13)
+      range: Array [
+        208,
+        209,
+      ]
+      value: ")",
+    Node "Punctuator" (15:14, 15:15)
+      range: Array [
+        210,
+        211,
+      ]
+      value: "{",
+    Node "Identifier" (16:8, 16:15)
+      range: Array [
+        220,
+        227,
+      ]
+      value: "console",
+    Node "Punctuator" (16:15, 16:16)
+      range: Array [
+        227,
+        228,
+      ]
+      value: ".",
+    Node "Identifier" (16:16, 16:19)
+      range: Array [
+        228,
+        231,
+      ]
+      value: "log",
+    Node "Punctuator" (16:19, 16:20)
+      range: Array [
+        231,
+        232,
+      ]
+      value: "(",
+    Node "Template" (16:20, 16:36)
+      range: Array [
+        232,
+        248,
+      ]
+      value: "`The value is ${",
+    Node "Keyword" (16:36, 16:40)
+      range: Array [
+        248,
+        252,
+      ]
+      value: "this",
+    Node "Punctuator" (16:40, 16:41)
+      range: Array [
+        252,
+        253,
+      ]
+      value: ".",
+    Node "Identifier" (16:41, 16:46)
+      range: Array [
+        253,
+        258,
+      ]
+      value: "value",
+    Node "Template" (16:46, 16:48)
+      range: Array [
+        258,
+        260,
+      ]
+      value: "}`",
+    Node "Punctuator" (16:48, 16:49)
+      range: Array [
+        260,
+        261,
+      ]
+      value: ")",
+    Node "Punctuator" (16:49, 16:50)
+      range: Array [
+        261,
+        262,
+      ]
+      value: ";",
+    Node "Punctuator" (17:4, 17:5)
+      range: Array [
+        267,
+        268,
+      ]
+      value: "}",
+    Node "Punctuator" (18:0, 18:1)
+      range: Array [
+        269,
+        270,
+      ]
+      value: "}",
+    Node "Keyword" (20:0, 20:5)
+      range: Array [
+        272,
+        277,
+      ]
+      value: "const",
+    Node "Identifier" (20:6, 20:21)
+      range: Array [
+        278,
+        293,
+      ]
+      value: "exampleInstance",
+    Node "Punctuator" (20:22, 20:23)
+      range: Array [
+        294,
+        295,
+      ]
+      value: "=",
+    Node "Keyword" (20:24, 20:27)
+      range: Array [
+        296,
+        299,
+      ]
+      value: "new",
+    Node "Identifier" (20:28, 20:40)
+      range: Array [
+        300,
+        312,
+      ]
+      value: "ExampleClass",
+    Node "Punctuator" (20:40, 20:41)
+      range: Array [
+        312,
+        313,
+      ]
+      value: "(",
+    Node "Numeric" (20:41, 20:43)
+      range: Array [
+        313,
+        315,
+      ]
+      value: "42",
+    Node "Punctuator" (20:43, 20:44)
+      range: Array [
+        315,
+        316,
+      ]
+      value: ")",
+    Node "Punctuator" (20:44, 20:45)
+      range: Array [
+        316,
+        317,
+      ]
+      value: ";",
+    Node "Identifier" (21:0, 21:15)
+      range: Array [
+        318,
+        333,
+      ]
+      value: "exampleInstance",
+    Node "Punctuator" (21:15, 21:16)
+      range: Array [
+        333,
+        334,
+      ]
+      value: ".",
+    Node "Identifier" (21:16, 21:23)
+      range: Array [
+        334,
+        341,
+      ]
+      value: "display",
+    Node "Punctuator" (21:23, 21:24)
+      range: Array [
+        341,
+        342,
+      ]
+      value: "(",
+    Node "Punctuator" (21:24, 21:25)
+      range: Array [
+        342,
+        343,
+      ]
+      value: ")",
+    Node "Punctuator" (21:25, 21:26)
+      range: Array [
+        343,
+        344,
+      ]
+      value: ";",
+  ]

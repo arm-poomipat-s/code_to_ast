@@ -1,0 +1,428 @@
+{
+  "type": "program",
+  "startIndex": 1,
+  "endIndex": 345,
+  "children": [
+    {
+      "type": "function_declaration",
+      "startIndex": 1,
+      "endIndex": 113,
+      "children": [
+        {
+          "type": "identifier",
+          "startIndex": 10,
+          "endIndex": 25,
+          "children": []
+        },
+        {
+          "type": "formal_parameters",
+          "startIndex": 25,
+          "endIndex": 28,
+          "children": [
+            {
+              "type": "identifier",
+              "startIndex": 26,
+              "endIndex": 27,
+              "children": []
+            }
+          ]
+        },
+        {
+          "type": "statement_block",
+          "startIndex": 29,
+          "endIndex": 113,
+          "children": [
+            {
+              "type": "if_statement",
+              "startIndex": 35,
+              "endIndex": 111,
+              "children": [
+                {
+                  "type": "parenthesized_expression",
+                  "startIndex": 38,
+                  "endIndex": 46,
+                  "children": [
+                    {
+                      "type": "binary_expression",
+                      "startIndex": 39,
+                      "endIndex": 45,
+                      "children": [
+                        {
+                          "type": "identifier",
+                          "startIndex": 39,
+                          "endIndex": 40,
+                          "children": []
+                        },
+                        {
+                          "type": "number",
+                          "startIndex": 43,
+                          "endIndex": 45,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "startIndex": 47,
+                  "endIndex": 76,
+                  "children": [
+                    {
+                      "type": "return_statement",
+                      "startIndex": 57,
+                      "endIndex": 70,
+                      "children": [
+                        {
+                          "type": "binary_expression",
+                          "startIndex": 64,
+                          "endIndex": 69,
+                          "children": [
+                            {
+                              "type": "identifier",
+                              "startIndex": 64,
+                              "endIndex": 65,
+                              "children": []
+                            },
+                            {
+                              "type": "number",
+                              "startIndex": 68,
+                              "endIndex": 69,
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "else_clause",
+                  "startIndex": 77,
+                  "endIndex": 111,
+                  "children": [
+                    {
+                      "type": "statement_block",
+                      "startIndex": 82,
+                      "endIndex": 111,
+                      "children": [
+                        {
+                          "type": "return_statement",
+                          "startIndex": 92,
+                          "endIndex": 105,
+                          "children": [
+                            {
+                              "type": "binary_expression",
+                              "startIndex": 99,
+                              "endIndex": 104,
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "startIndex": 99,
+                                  "endIndex": 100,
+                                  "children": []
+                                },
+                                {
+                                  "type": "number",
+                                  "startIndex": 103,
+                                  "endIndex": 104,
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_declaration",
+      "startIndex": 115,
+      "endIndex": 270,
+      "children": [
+        {
+          "type": "identifier",
+          "startIndex": 121,
+          "endIndex": 133,
+          "children": []
+        },
+        {
+          "type": "class_body",
+          "startIndex": 134,
+          "endIndex": 270,
+          "children": [
+            {
+              "type": "method_definition",
+              "startIndex": 140,
+              "endIndex": 194,
+              "children": [
+                {
+                  "type": "property_identifier",
+                  "startIndex": 140,
+                  "endIndex": 151,
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "startIndex": 151,
+                  "endIndex": 158,
+                  "children": [
+                    {
+                      "type": "identifier",
+                      "startIndex": 152,
+                      "endIndex": 157,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "startIndex": 159,
+                  "endIndex": 194,
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "startIndex": 169,
+                      "endIndex": 188,
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "startIndex": 169,
+                          "endIndex": 187,
+                          "children": [
+                            {
+                              "type": "member_expression",
+                              "startIndex": 169,
+                              "endIndex": 179,
+                              "children": [
+                                {
+                                  "type": "this",
+                                  "startIndex": 169,
+                                  "endIndex": 173,
+                                  "children": []
+                                },
+                                {
+                                  "type": "property_identifier",
+                                  "startIndex": 174,
+                                  "endIndex": 179,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "identifier",
+                              "startIndex": 182,
+                              "endIndex": 187,
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "method_definition",
+              "startIndex": 200,
+              "endIndex": 268,
+              "children": [
+                {
+                  "type": "property_identifier",
+                  "startIndex": 200,
+                  "endIndex": 207,
+                  "children": []
+                },
+                {
+                  "type": "formal_parameters",
+                  "startIndex": 207,
+                  "endIndex": 209,
+                  "children": []
+                },
+                {
+                  "type": "statement_block",
+                  "startIndex": 210,
+                  "endIndex": 268,
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "startIndex": 220,
+                      "endIndex": 262,
+                      "children": [
+                        {
+                          "type": "call_expression",
+                          "startIndex": 220,
+                          "endIndex": 261,
+                          "children": [
+                            {
+                              "type": "member_expression",
+                              "startIndex": 220,
+                              "endIndex": 231,
+                              "children": [
+                                {
+                                  "type": "identifier",
+                                  "startIndex": 220,
+                                  "endIndex": 227,
+                                  "children": []
+                                },
+                                {
+                                  "type": "property_identifier",
+                                  "startIndex": 228,
+                                  "endIndex": 231,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "type": "arguments",
+                              "startIndex": 231,
+                              "endIndex": 261,
+                              "children": [
+                                {
+                                  "type": "template_string",
+                                  "startIndex": 232,
+                                  "endIndex": 260,
+                                  "children": [
+                                    {
+                                      "type": "string_fragment",
+                                      "startIndex": 233,
+                                      "endIndex": 246,
+                                      "children": []
+                                    },
+                                    {
+                                      "type": "template_substitution",
+                                      "startIndex": 246,
+                                      "endIndex": 259,
+                                      "children": [
+                                        {
+                                          "type": "member_expression",
+                                          "startIndex": 248,
+                                          "endIndex": 258,
+                                          "children": [
+                                            {
+                                              "type": "this",
+                                              "startIndex": 248,
+                                              "endIndex": 252,
+                                              "children": []
+                                            },
+                                            {
+                                              "type": "property_identifier",
+                                              "startIndex": 253,
+                                              "endIndex": 258,
+                                              "children": []
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "lexical_declaration",
+      "startIndex": 272,
+      "endIndex": 317,
+      "children": [
+        {
+          "type": "variable_declarator",
+          "startIndex": 278,
+          "endIndex": 316,
+          "children": [
+            {
+              "type": "identifier",
+              "startIndex": 278,
+              "endIndex": 293,
+              "children": []
+            },
+            {
+              "type": "new_expression",
+              "startIndex": 296,
+              "endIndex": 316,
+              "children": [
+                {
+                  "type": "identifier",
+                  "startIndex": 300,
+                  "endIndex": 312,
+                  "children": []
+                },
+                {
+                  "type": "arguments",
+                  "startIndex": 312,
+                  "endIndex": 316,
+                  "children": [
+                    {
+                      "type": "number",
+                      "startIndex": 313,
+                      "endIndex": 315,
+                      "children": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "startIndex": 318,
+      "endIndex": 344,
+      "children": [
+        {
+          "type": "call_expression",
+          "startIndex": 318,
+          "endIndex": 343,
+          "children": [
+            {
+              "type": "member_expression",
+              "startIndex": 318,
+              "endIndex": 341,
+              "children": [
+                {
+                  "type": "identifier",
+                  "startIndex": 318,
+                  "endIndex": 333,
+                  "children": []
+                },
+                {
+                  "type": "property_identifier",
+                  "startIndex": 334,
+                  "endIndex": 341,
+                  "children": []
+                }
+              ]
+            },
+            {
+              "type": "arguments",
+              "startIndex": 341,
+              "endIndex": 343,
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+Node "Program"
+  body: Array [
+    Node "FunctionDeclaration"
+      async: false
+      body: Node "BlockStatement"
+        body: Array [
+          Node "IfStatement"
+            alternate: Node "BlockStatement"
+              body: Array [
+                Node "ReturnStatement"
+                  argument: Node "BinaryExpression"
+                    left: Node "Identifier"
+                      name: "x"
+                    operator: "+"
+                    right: Node "Literal"
+                      raw: "2"
+                      value: 2,
+              ]
+            consequent: Node "BlockStatement"
+              body: Array [
+                Node "ReturnStatement"
+                  argument: Node "BinaryExpression"
+                    left: Node "Identifier"
+                      name: "x"
+                    operator: "*"
+                    right: Node "Literal"
+                      raw: "2"
+                      value: 2,
+              ]
+            test: Node "BinaryExpression"
+              left: Node "Identifier"
+                name: "x"
+              operator: ">"
+              right: Node "Literal"
+                raw: "10"
+                value: 10,
+        ]
+      expression: false
+      generator: false
+      id: Node "Identifier"
+        name: "exampleFunction"
+      params: Array [
+        Node "Identifier"
+          name: "x",
+      ],
+    Node "ClassDeclaration"
+      body: Node "ClassBody"
+        body: Array [
+          Node "MethodDefinition"
+            computed: false
+            key: Node "Identifier"
+              name: "constructor"
+            kind: "constructor"
+            static: false
+            value: Node "FunctionExpression"
+              async: false
+              body: Node "BlockStatement"
+                body: Array [
+                  Node "ExpressionStatement"
+                    expression: Node "AssignmentExpression"
+                      left: Node "MemberExpression"
+                        computed: false
+                        object: Node "ThisExpression"
+                        optional: false
+                        property: Node "Identifier"
+                          name: "value"
+                      operator: "="
+                      right: Node "Identifier"
+                        name: "value",
+                ]
+              expression: false
+              generator: false
+              id: null
+              params: Array [
+                Node "Identifier"
+                  name: "value",
+              ],
+          Node "MethodDefinition"
+            computed: false
+            key: Node "Identifier"
+              name: "display"
+            kind: "method"
+            static: false
+            value: Node "FunctionExpression"
+              async: false
+              body: Node "BlockStatement"
+                body: Array [
+                  Node "ExpressionStatement"
+                    expression: Node "CallExpression"
+                      arguments: Array [
+                        Node "TemplateLiteral"
+                          expressions: Array [
+                            Node "MemberExpression"
+                              computed: false
+                              object: Node "ThisExpression"
+                              optional: false
+                              property: Node "Identifier"
+                                name: "value",
+                          ]
+                          quasis: Array [
+                            Node "TemplateElement"
+                              tail: false
+                              value: Object {
+                                "cooked": "The value is ",
+                                "raw": "The value is ",
+                              },
+                            Node "TemplateElement"
+                              tail: true
+                              value: Object {
+                                "cooked": "",
+                                "raw": "",
+                              },
+                          ],
+                      ]
+                      callee: Node "MemberExpression"
+                        computed: false
+                        object: Node "Identifier"
+                          name: "console"
+                        optional: false
+                        property: Node "Identifier"
+                          name: "log"
+                      optional: false,
+                ]
+              expression: false
+              generator: false
+              id: null
+              params: Array [],
+        ]
+      id: Node "Identifier"
+        name: "ExampleClass"
+      superClass: null,
+    Node "VariableDeclaration"
+      declarations: Array [
+        Node "VariableDeclarator"
+          id: Node "Identifier"
+            name: "exampleInstance"
+          init: Node "NewExpression"
+            arguments: Array [
+              Node "Literal"
+                raw: "42"
+                value: 42,
+            ]
+            callee: Node "Identifier"
+              name: "ExampleClass",
+      ]
+      kind: "const",
+    Node "ExpressionStatement"
+      expression: Node "CallExpression"
+        arguments: Array []
+        callee: Node "MemberExpression"
+          computed: false
+          object: Node "Identifier"
+            name: "exampleInstance"
+          optional: false
+          property: Node "Identifier"
+            name: "display"
+        optional: false,
+  ]
+  sourceType: "script"

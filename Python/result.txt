@@ -1,0 +1,103 @@
+Module(
+    body=[
+        FunctionDef(
+            name='example_function',
+            args=arguments(
+                posonlyargs=[],
+                args=[
+                    arg(arg='x')],
+                kwonlyargs=[],
+                kw_defaults=[],
+                defaults=[]),
+            body=[
+                If(
+                    test=Compare(
+                        left=Name(id='x', ctx=Load()),
+                        ops=[
+                            Gt()],
+                        comparators=[
+                            Constant(value=10)]),
+                    body=[
+                        Return(
+                            value=BinOp(
+                                left=Name(id='x', ctx=Load()),
+                                op=Mult(),
+                                right=Constant(value=2)))],
+                    orelse=[
+                        Return(
+                            value=BinOp(
+                                left=Name(id='x', ctx=Load()),
+                                op=Add(),
+                                right=Constant(value=2)))])],
+            decorator_list=[],
+            type_params=[]),
+        ClassDef(
+            name='ExampleClass',
+            bases=[],
+            keywords=[],
+            body=[
+                FunctionDef(
+                    name='__init__',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self'),
+                            arg(arg='value')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Attribute(
+                                    value=Name(id='self', ctx=Load()),
+                                    attr='value',
+                                    ctx=Store())],
+                            value=Name(id='value', ctx=Load()))],
+                    decorator_list=[],
+                    type_params=[]),
+                FunctionDef(
+                    name='display',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    JoinedStr(
+                                        values=[
+                                            Constant(value='The value is '),
+                                            FormattedValue(
+                                                value=Attribute(
+                                                    value=Name(id='self', ctx=Load()),
+                                                    attr='value',
+                                                    ctx=Load()),
+                                                conversion=-1)])],
+                                keywords=[]))],
+                    decorator_list=[],
+                    type_params=[])],
+            decorator_list=[],
+            type_params=[]),
+        Assign(
+            targets=[
+                Name(id='example_instance', ctx=Store())],
+            value=Call(
+                func=Name(id='ExampleClass', ctx=Load()),
+                args=[
+                    Constant(value=42)],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Attribute(
+                    value=Name(id='example_instance', ctx=Load()),
+                    attr='display',
+                    ctx=Load()),
+                args=[],
+                keywords=[]))],
+    type_ignores=[])

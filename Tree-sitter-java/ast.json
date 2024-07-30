@@ -1,0 +1,669 @@
+{
+  "type": "program",
+  "children": [
+    "// Person.java",
+    {
+      "type": "class_declaration",
+      "children": [
+        {
+          "type": "modifiers",
+          "children": [
+            "public"
+          ]
+        },
+        "class",
+        "Person",
+        {
+          "type": "class_body",
+          "children": [
+            "{",
+            {
+              "type": "field_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "private"
+                  ]
+                },
+                "String",
+                {
+                  "type": "variable_declarator",
+                  "children": [
+                    "name"
+                  ]
+                },
+                ";"
+              ]
+            },
+            {
+              "type": "field_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "private"
+                  ]
+                },
+                {
+                  "type": "integral_type",
+                  "children": [
+                    "int"
+                  ]
+                },
+                {
+                  "type": "variable_declarator",
+                  "children": [
+                    "age"
+                  ]
+                },
+                ";"
+              ]
+            },
+            "// Constructor",
+            {
+              "type": "constructor_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "public"
+                  ]
+                },
+                "Person",
+                {
+                  "type": "formal_parameters",
+                  "children": [
+                    "(",
+                    {
+                      "type": "formal_parameter",
+                      "children": [
+                        "String",
+                        "name"
+                      ]
+                    },
+                    ",",
+                    {
+                      "type": "formal_parameter",
+                      "children": [
+                        {
+                          "type": "integral_type",
+                          "children": [
+                            "int"
+                          ]
+                        },
+                        "age"
+                      ]
+                    },
+                    ")"
+                  ]
+                },
+                {
+                  "type": "constructor_body",
+                  "children": [
+                    "{",
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "children": [
+                                "this",
+                                ".",
+                                "name"
+                              ]
+                            },
+                            "=",
+                            "name"
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "children": [
+                                "this",
+                                ".",
+                                "age"
+                              ]
+                            },
+                            "=",
+                            "age"
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            "// Getter for name",
+            {
+              "type": "method_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "public"
+                  ]
+                },
+                "String",
+                "getName",
+                {
+                  "type": "formal_parameters",
+                  "children": [
+                    "(",
+                    ")"
+                  ]
+                },
+                {
+                  "type": "block",
+                  "children": [
+                    "{",
+                    {
+                      "type": "return_statement",
+                      "children": [
+                        "return",
+                        "name",
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            "// Setter for name",
+            {
+              "type": "method_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "public"
+                  ]
+                },
+                "void",
+                "setName",
+                {
+                  "type": "formal_parameters",
+                  "children": [
+                    "(",
+                    {
+                      "type": "formal_parameter",
+                      "children": [
+                        "String",
+                        "name"
+                      ]
+                    },
+                    ")"
+                  ]
+                },
+                {
+                  "type": "block",
+                  "children": [
+                    "{",
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "children": [
+                                "this",
+                                ".",
+                                "name"
+                              ]
+                            },
+                            "=",
+                            "name"
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            "// Getter for age",
+            {
+              "type": "method_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "public"
+                  ]
+                },
+                {
+                  "type": "integral_type",
+                  "children": [
+                    "int"
+                  ]
+                },
+                "getAge",
+                {
+                  "type": "formal_parameters",
+                  "children": [
+                    "(",
+                    ")"
+                  ]
+                },
+                {
+                  "type": "block",
+                  "children": [
+                    "{",
+                    {
+                      "type": "return_statement",
+                      "children": [
+                        "return",
+                        "age",
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            "// Setter for age",
+            {
+              "type": "method_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "public"
+                  ]
+                },
+                "void",
+                "setAge",
+                {
+                  "type": "formal_parameters",
+                  "children": [
+                    "(",
+                    {
+                      "type": "formal_parameter",
+                      "children": [
+                        {
+                          "type": "integral_type",
+                          "children": [
+                            "int"
+                          ]
+                        },
+                        "age"
+                      ]
+                    },
+                    ")"
+                  ]
+                },
+                {
+                  "type": "block",
+                  "children": [
+                    "{",
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment_expression",
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "children": [
+                                "this",
+                                ".",
+                                "age"
+                              ]
+                            },
+                            "=",
+                            "age"
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            "// Method to display person details",
+            {
+              "type": "method_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "public"
+                  ]
+                },
+                "void",
+                "displayPerson",
+                {
+                  "type": "formal_parameters",
+                  "children": [
+                    "(",
+                    ")"
+                  ]
+                },
+                {
+                  "type": "block",
+                  "children": [
+                    "{",
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "children": [
+                                "System",
+                                ".",
+                                "out"
+                              ]
+                            },
+                            ".",
+                            "println",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                {
+                                  "type": "binary_expression",
+                                  "children": [
+                                    {
+                                      "type": "string_literal",
+                                      "children": [
+                                        "\"",
+                                        "Name: ",
+                                        "\""
+                                      ]
+                                    },
+                                    "+",
+                                    "name"
+                                  ]
+                                },
+                                ")"
+                              ]
+                            }
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "children": [
+                            {
+                              "type": "field_access",
+                              "children": [
+                                "System",
+                                ".",
+                                "out"
+                              ]
+                            },
+                            ".",
+                            "println",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                {
+                                  "type": "binary_expression",
+                                  "children": [
+                                    {
+                                      "type": "string_literal",
+                                      "children": [
+                                        "\"",
+                                        "Age: ",
+                                        "\""
+                                      ]
+                                    },
+                                    "+",
+                                    "age"
+                                  ]
+                                },
+                                ")"
+                              ]
+                            }
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            "}"
+          ]
+        }
+      ]
+    },
+    "// Main.java",
+    {
+      "type": "class_declaration",
+      "children": [
+        {
+          "type": "modifiers",
+          "children": [
+            "public"
+          ]
+        },
+        "class",
+        "Main",
+        {
+          "type": "class_body",
+          "children": [
+            "{",
+            {
+              "type": "method_declaration",
+              "children": [
+                {
+                  "type": "modifiers",
+                  "children": [
+                    "public",
+                    "static"
+                  ]
+                },
+                "void",
+                "main",
+                {
+                  "type": "formal_parameters",
+                  "children": [
+                    "(",
+                    {
+                      "type": "formal_parameter",
+                      "children": [
+                        {
+                          "type": "array_type",
+                          "children": [
+                            "String",
+                            {
+                              "type": "dimensions",
+                              "children": [
+                                "[",
+                                "]"
+                              ]
+                            }
+                          ]
+                        },
+                        "args"
+                      ]
+                    },
+                    ")"
+                  ]
+                },
+                {
+                  "type": "block",
+                  "children": [
+                    "{",
+                    "// Create a new Person object",
+                    {
+                      "type": "local_variable_declaration",
+                      "children": [
+                        "Person",
+                        {
+                          "type": "variable_declarator",
+                          "children": [
+                            "person",
+                            "=",
+                            {
+                              "type": "object_creation_expression",
+                              "children": [
+                                "new",
+                                "Person",
+                                {
+                                  "type": "argument_list",
+                                  "children": [
+                                    "(",
+                                    {
+                                      "type": "string_literal",
+                                      "children": [
+                                        "\"",
+                                        "John Doe",
+                                        "\""
+                                      ]
+                                    },
+                                    ",",
+                                    "30",
+                                    ")"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "// Display person details",
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "children": [
+                            "person",
+                            ".",
+                            "displayPerson",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                ")"
+                              ]
+                            }
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "// Update person details",
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "children": [
+                            "person",
+                            ".",
+                            "setName",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                {
+                                  "type": "string_literal",
+                                  "children": [
+                                    "\"",
+                                    "Jane Doe",
+                                    "\""
+                                  ]
+                                },
+                                ")"
+                              ]
+                            }
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "children": [
+                            "person",
+                            ".",
+                            "setAge",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                "25",
+                                ")"
+                              ]
+                            }
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "// Display updated person details",
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "method_invocation",
+                          "children": [
+                            "person",
+                            ".",
+                            "displayPerson",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                ")"
+                              ]
+                            }
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            "}"
+          ]
+        }
+      ]
+    }
+  ]
+}

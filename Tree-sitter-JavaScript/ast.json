@@ -1,0 +1,467 @@
+{
+  "type": "program",
+  "children": [
+    "// Function to add two numbers",
+    {
+      "type": "function_declaration",
+      "children": [
+        "function",
+        "add",
+        {
+          "type": "formal_parameters",
+          "children": [
+            "(",
+            "a",
+            ",",
+            "b",
+            ")"
+          ]
+        },
+        {
+          "type": "statement_block",
+          "children": [
+            "{",
+            {
+              "type": "return_statement",
+              "children": [
+                "return",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    "a",
+                    "+",
+                    "b"
+                  ]
+                },
+                ";"
+              ]
+            },
+            "}"
+          ]
+        }
+      ]
+    },
+    "// Function to subtract two numbers",
+    {
+      "type": "function_declaration",
+      "children": [
+        "function",
+        "subtract",
+        {
+          "type": "formal_parameters",
+          "children": [
+            "(",
+            "a",
+            ",",
+            "b",
+            ")"
+          ]
+        },
+        {
+          "type": "statement_block",
+          "children": [
+            "{",
+            {
+              "type": "return_statement",
+              "children": [
+                "return",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    "a",
+                    "-",
+                    "b"
+                  ]
+                },
+                ";"
+              ]
+            },
+            "}"
+          ]
+        }
+      ]
+    },
+    "// Function to multiply two numbers",
+    {
+      "type": "function_declaration",
+      "children": [
+        "function",
+        "multiply",
+        {
+          "type": "formal_parameters",
+          "children": [
+            "(",
+            "a",
+            ",",
+            "b",
+            ")"
+          ]
+        },
+        {
+          "type": "statement_block",
+          "children": [
+            "{",
+            {
+              "type": "return_statement",
+              "children": [
+                "return",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    "a",
+                    "*",
+                    "b"
+                  ]
+                },
+                ";"
+              ]
+            },
+            "}"
+          ]
+        }
+      ]
+    },
+    "// Function to divide two numbers",
+    {
+      "type": "function_declaration",
+      "children": [
+        "function",
+        "divide",
+        {
+          "type": "formal_parameters",
+          "children": [
+            "(",
+            "a",
+            ",",
+            "b",
+            ")"
+          ]
+        },
+        {
+          "type": "statement_block",
+          "children": [
+            "{",
+            {
+              "type": "if_statement",
+              "children": [
+                "if",
+                {
+                  "type": "parenthesized_expression",
+                  "children": [
+                    "(",
+                    {
+                      "type": "binary_expression",
+                      "children": [
+                        "b",
+                        "===",
+                        "0"
+                      ]
+                    },
+                    ")"
+                  ]
+                },
+                {
+                  "type": "statement_block",
+                  "children": [
+                    "{",
+                    {
+                      "type": "return_statement",
+                      "children": [
+                        "return",
+                        {
+                          "type": "string",
+                          "children": [
+                            "\"",
+                            "Error: Division by zero",
+                            "\""
+                          ]
+                        },
+                        ";"
+                      ]
+                    },
+                    "}"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "return_statement",
+              "children": [
+                "return",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    "a",
+                    "/",
+                    "b"
+                  ]
+                },
+                ";"
+              ]
+            },
+            "}"
+          ]
+        }
+      ]
+    },
+    "// Example usage",
+    {
+      "type": "lexical_declaration",
+      "children": [
+        "let",
+        {
+          "type": "variable_declarator",
+          "children": [
+            "num1",
+            "=",
+            "10"
+          ]
+        },
+        ";"
+      ]
+    },
+    {
+      "type": "lexical_declaration",
+      "children": [
+        "let",
+        {
+          "type": "variable_declarator",
+          "children": [
+            "num2",
+            "=",
+            "5"
+          ]
+        },
+        ";"
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "children": [
+        {
+          "type": "call_expression",
+          "children": [
+            {
+              "type": "member_expression",
+              "children": [
+                "console",
+                ".",
+                "log"
+              ]
+            },
+            {
+              "type": "arguments",
+              "children": [
+                "(",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    {
+                      "type": "string",
+                      "children": [
+                        "\"",
+                        "Addition: ",
+                        "\""
+                      ]
+                    },
+                    "+",
+                    {
+                      "type": "call_expression",
+                      "children": [
+                        "add",
+                        {
+                          "type": "arguments",
+                          "children": [
+                            "(",
+                            "num1",
+                            ",",
+                            "num2",
+                            ")"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ")"
+              ]
+            }
+          ]
+        },
+        ";"
+      ]
+    },
+    "// Addition: 15",
+    {
+      "type": "expression_statement",
+      "children": [
+        {
+          "type": "call_expression",
+          "children": [
+            {
+              "type": "member_expression",
+              "children": [
+                "console",
+                ".",
+                "log"
+              ]
+            },
+            {
+              "type": "arguments",
+              "children": [
+                "(",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    {
+                      "type": "string",
+                      "children": [
+                        "\"",
+                        "Subtraction: ",
+                        "\""
+                      ]
+                    },
+                    "+",
+                    {
+                      "type": "call_expression",
+                      "children": [
+                        "subtract",
+                        {
+                          "type": "arguments",
+                          "children": [
+                            "(",
+                            "num1",
+                            ",",
+                            "num2",
+                            ")"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ")"
+              ]
+            }
+          ]
+        },
+        ";"
+      ]
+    },
+    "// Subtraction: 5",
+    {
+      "type": "expression_statement",
+      "children": [
+        {
+          "type": "call_expression",
+          "children": [
+            {
+              "type": "member_expression",
+              "children": [
+                "console",
+                ".",
+                "log"
+              ]
+            },
+            {
+              "type": "arguments",
+              "children": [
+                "(",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    {
+                      "type": "string",
+                      "children": [
+                        "\"",
+                        "Multiplication: ",
+                        "\""
+                      ]
+                    },
+                    "+",
+                    {
+                      "type": "call_expression",
+                      "children": [
+                        "multiply",
+                        {
+                          "type": "arguments",
+                          "children": [
+                            "(",
+                            "num1",
+                            ",",
+                            "num2",
+                            ")"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ")"
+              ]
+            }
+          ]
+        },
+        ";"
+      ]
+    },
+    "// Multiplication: 50",
+    {
+      "type": "expression_statement",
+      "children": [
+        {
+          "type": "call_expression",
+          "children": [
+            {
+              "type": "member_expression",
+              "children": [
+                "console",
+                ".",
+                "log"
+              ]
+            },
+            {
+              "type": "arguments",
+              "children": [
+                "(",
+                {
+                  "type": "binary_expression",
+                  "children": [
+                    {
+                      "type": "string",
+                      "children": [
+                        "\"",
+                        "Division: ",
+                        "\""
+                      ]
+                    },
+                    "+",
+                    {
+                      "type": "call_expression",
+                      "children": [
+                        "divide",
+                        {
+                          "type": "arguments",
+                          "children": [
+                            "(",
+                            "num1",
+                            ",",
+                            "num2",
+                            ")"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                ")"
+              ]
+            }
+          ]
+        },
+        ";"
+      ]
+    },
+    "// Division: 2"
+  ]
+}

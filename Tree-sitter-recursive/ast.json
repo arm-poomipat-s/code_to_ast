@@ -1,0 +1,1499 @@
+{
+  "type": "module",
+  "children": [
+    {
+      "type": "import_statement",
+      "children": [
+        "import",
+        {
+          "type": "dotted_name",
+          "children": [
+            "aiohttp"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "children": [
+        "import",
+        {
+          "type": "dotted_name",
+          "children": [
+            "asyncio"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "children": [
+        "import",
+        {
+          "type": "dotted_name",
+          "children": [
+            "aiofiles"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_statement",
+      "children": [
+        "import",
+        {
+          "type": "dotted_name",
+          "children": [
+            "aiosqlite"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "children": [
+        "from",
+        {
+          "type": "dotted_name",
+          "children": [
+            "bs4"
+          ]
+        },
+        "import",
+        {
+          "type": "dotted_name",
+          "children": [
+            "BeautifulSoup"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "import_from_statement",
+      "children": [
+        "from",
+        {
+          "type": "dotted_name",
+          "children": [
+            "contextlib"
+          ]
+        },
+        "import",
+        {
+          "type": "dotted_name",
+          "children": [
+            "asynccontextmanager"
+          ]
+        }
+      ]
+    },
+    "# Database Context Manager",
+    {
+      "type": "decorated_definition",
+      "children": [
+        {
+          "type": "decorator",
+          "children": [
+            "@",
+            "asynccontextmanager"
+          ]
+        },
+        {
+          "type": "function_definition",
+          "children": [
+            "async",
+            "def",
+            "db_connection",
+            {
+              "type": "parameters",
+              "children": [
+                "(",
+                "database",
+                ")"
+              ]
+            },
+            ":",
+            {
+              "type": "block",
+              "children": [
+                {
+                  "type": "expression_statement",
+                  "children": [
+                    {
+                      "type": "assignment",
+                      "children": [
+                        "conn",
+                        "=",
+                        {
+                          "type": "await",
+                          "children": [
+                            "await",
+                            {
+                              "type": "call",
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "children": [
+                                    "aiosqlite",
+                                    ".",
+                                    "connect"
+                                  ]
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "children": [
+                                    "(",
+                                    "database",
+                                    ")"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "try_statement",
+                  "children": [
+                    "try",
+                    ":",
+                    {
+                      "type": "block",
+                      "children": [
+                        {
+                          "type": "expression_statement",
+                          "children": [
+                            {
+                              "type": "yield",
+                              "children": [
+                                "yield",
+                                "conn"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "finally_clause",
+                      "children": [
+                        "finally",
+                        ":",
+                        {
+                          "type": "block",
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "children": [
+                                {
+                                  "type": "await",
+                                  "children": [
+                                    "await",
+                                    {
+                                      "type": "call",
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "conn",
+                                            ".",
+                                            "close"
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "children": [
+                                            "(",
+                                            ")"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "# Decorator to log function calls",
+    {
+      "type": "function_definition",
+      "children": [
+        "def",
+        "log_decorator",
+        {
+          "type": "parameters",
+          "children": [
+            "(",
+            "func",
+            ")"
+          ]
+        },
+        ":",
+        {
+          "type": "block",
+          "children": [
+            {
+              "type": "function_definition",
+              "children": [
+                "async",
+                "def",
+                "wrapper",
+                {
+                  "type": "parameters",
+                  "children": [
+                    "(",
+                    {
+                      "type": "list_splat_pattern",
+                      "children": [
+                        "*",
+                        "args"
+                      ]
+                    },
+                    ",",
+                    {
+                      "type": "dictionary_splat_pattern",
+                      "children": [
+                        "**",
+                        "kwargs"
+                      ]
+                    },
+                    ")"
+                  ]
+                },
+                ":",
+                {
+                  "type": "block",
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "call",
+                          "children": [
+                            "print",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                {
+                                  "type": "string",
+                                  "children": [
+                                    "f\"",
+                                    "Calling ",
+                                    {
+                                      "type": "interpolation",
+                                      "children": [
+                                        "{",
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "func",
+                                            ".",
+                                            "__name__"
+                                          ]
+                                        },
+                                        "}"
+                                      ]
+                                    },
+                                    " with ",
+                                    {
+                                      "type": "interpolation",
+                                      "children": [
+                                        "{",
+                                        "args",
+                                        "}"
+                                      ]
+                                    },
+                                    " and ",
+                                    {
+                                      "type": "interpolation",
+                                      "children": [
+                                        "{",
+                                        "kwargs",
+                                        "}"
+                                      ]
+                                    },
+                                    "\""
+                                  ]
+                                },
+                                ")"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment",
+                          "children": [
+                            "result",
+                            "=",
+                            {
+                              "type": "await",
+                              "children": [
+                                "await",
+                                {
+                                  "type": "call",
+                                  "children": [
+                                    "func",
+                                    {
+                                      "type": "argument_list",
+                                      "children": [
+                                        "(",
+                                        {
+                                          "type": "list_splat",
+                                          "children": [
+                                            "*",
+                                            "args"
+                                          ]
+                                        },
+                                        ",",
+                                        {
+                                          "type": "dictionary_splat",
+                                          "children": [
+                                            "**",
+                                            "kwargs"
+                                          ]
+                                        },
+                                        ")"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "call",
+                          "children": [
+                            "print",
+                            {
+                              "type": "argument_list",
+                              "children": [
+                                "(",
+                                {
+                                  "type": "string",
+                                  "children": [
+                                    "f\"",
+                                    "Finished ",
+                                    {
+                                      "type": "interpolation",
+                                      "children": [
+                                        "{",
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "func",
+                                            ".",
+                                            "__name__"
+                                          ]
+                                        },
+                                        "}"
+                                      ]
+                                    },
+                                    " with result ",
+                                    {
+                                      "type": "interpolation",
+                                      "children": [
+                                        "{",
+                                        "result",
+                                        "}"
+                                      ]
+                                    },
+                                    "\""
+                                  ]
+                                },
+                                ")"
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "return_statement",
+                      "children": [
+                        "return",
+                        "result"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "return_statement",
+              "children": [
+                "return",
+                "wrapper"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "class_definition",
+      "children": [
+        "class",
+        "Scraper",
+        ":",
+        {
+          "type": "block",
+          "children": [
+            {
+              "type": "function_definition",
+              "children": [
+                "def",
+                "__init__",
+                {
+                  "type": "parameters",
+                  "children": [
+                    "(",
+                    "self",
+                    ",",
+                    "urls",
+                    ")"
+                  ]
+                },
+                ":",
+                {
+                  "type": "block",
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment",
+                          "children": [
+                            {
+                              "type": "attribute",
+                              "children": [
+                                "self",
+                                ".",
+                                "urls"
+                              ]
+                            },
+                            "=",
+                            "urls"
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "decorated_definition",
+              "children": [
+                {
+                  "type": "decorator",
+                  "children": [
+                    "@",
+                    "log_decorator"
+                  ]
+                },
+                {
+                  "type": "function_definition",
+                  "children": [
+                    "async",
+                    "def",
+                    "fetch",
+                    {
+                      "type": "parameters",
+                      "children": [
+                        "(",
+                        "self",
+                        ",",
+                        "session",
+                        ",",
+                        "url",
+                        ")"
+                      ]
+                    },
+                    ":",
+                    {
+                      "type": "block",
+                      "children": [
+                        {
+                          "type": "with_statement",
+                          "children": [
+                            "async",
+                            "with",
+                            {
+                              "type": "with_clause",
+                              "children": [
+                                {
+                                  "type": "with_item",
+                                  "children": [
+                                    {
+                                      "type": "as_pattern",
+                                      "children": [
+                                        {
+                                          "type": "call",
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "children": [
+                                                "session",
+                                                ".",
+                                                "get"
+                                              ]
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "children": [
+                                                "(",
+                                                "url",
+                                                ")"
+                                              ]
+                                            }
+                                          ]
+                                        },
+                                        "as",
+                                        {
+                                          "type": "as_pattern_target",
+                                          "children": [
+                                            "response"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            ":",
+                            {
+                              "type": "block",
+                              "children": [
+                                {
+                                  "type": "return_statement",
+                                  "children": [
+                                    "return",
+                                    {
+                                      "type": "await",
+                                      "children": [
+                                        "await",
+                                        {
+                                          "type": "call",
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "children": [
+                                                "response",
+                                                ".",
+                                                "text"
+                                              ]
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "children": [
+                                                "(",
+                                                ")"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "decorated_definition",
+              "children": [
+                {
+                  "type": "decorator",
+                  "children": [
+                    "@",
+                    "log_decorator"
+                  ]
+                },
+                {
+                  "type": "function_definition",
+                  "children": [
+                    "async",
+                    "def",
+                    "parse",
+                    {
+                      "type": "parameters",
+                      "children": [
+                        "(",
+                        "self",
+                        ",",
+                        "html",
+                        ")"
+                      ]
+                    },
+                    ":",
+                    {
+                      "type": "block",
+                      "children": [
+                        {
+                          "type": "expression_statement",
+                          "children": [
+                            {
+                              "type": "assignment",
+                              "children": [
+                                "soup",
+                                "=",
+                                {
+                                  "type": "call",
+                                  "children": [
+                                    "BeautifulSoup",
+                                    {
+                                      "type": "argument_list",
+                                      "children": [
+                                        "(",
+                                        "html",
+                                        ",",
+                                        {
+                                          "type": "string",
+                                          "children": [
+                                            "'",
+                                            "html.parser",
+                                            "'"
+                                          ]
+                                        },
+                                        ")"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "type": "return_statement",
+                          "children": [
+                            "return",
+                            {
+                              "type": "conditional_expression",
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "children": [
+                                    {
+                                      "type": "attribute",
+                                      "children": [
+                                        "soup",
+                                        ".",
+                                        "title"
+                                      ]
+                                    },
+                                    ".",
+                                    "string"
+                                  ]
+                                },
+                                "if",
+                                {
+                                  "type": "attribute",
+                                  "children": [
+                                    "soup",
+                                    ".",
+                                    "title"
+                                  ]
+                                },
+                                "else",
+                                {
+                                  "type": "string",
+                                  "children": [
+                                    "'",
+                                    "No Title",
+                                    "'"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "decorated_definition",
+              "children": [
+                {
+                  "type": "decorator",
+                  "children": [
+                    "@",
+                    "log_decorator"
+                  ]
+                },
+                {
+                  "type": "function_definition",
+                  "children": [
+                    "async",
+                    "def",
+                    "save",
+                    {
+                      "type": "parameters",
+                      "children": [
+                        "(",
+                        "self",
+                        ",",
+                        "db",
+                        ",",
+                        "url",
+                        ",",
+                        "title",
+                        ")"
+                      ]
+                    },
+                    ":",
+                    {
+                      "type": "block",
+                      "children": [
+                        {
+                          "type": "with_statement",
+                          "children": [
+                            "async",
+                            "with",
+                            {
+                              "type": "with_clause",
+                              "children": [
+                                {
+                                  "type": "with_item",
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "db",
+                                            ".",
+                                            "execute"
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "children": [
+                                            "(",
+                                            {
+                                              "type": "string",
+                                              "children": [
+                                                "\"",
+                                                "INSERT INTO pages (url, title) VALUES (?, ?)",
+                                                "\""
+                                              ]
+                                            },
+                                            ",",
+                                            {
+                                              "type": "tuple",
+                                              "children": [
+                                                "(",
+                                                "url",
+                                                ",",
+                                                "title",
+                                                ")"
+                                              ]
+                                            },
+                                            ")"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            ":",
+                            {
+                              "type": "block",
+                              "children": [
+                                {
+                                  "type": "expression_statement",
+                                  "children": [
+                                    {
+                                      "type": "await",
+                                      "children": [
+                                        "await",
+                                        {
+                                          "type": "call",
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "children": [
+                                                "db",
+                                                ".",
+                                                "commit"
+                                              ]
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "children": [
+                                                "(",
+                                                ")"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "function_definition",
+              "children": [
+                "async",
+                "def",
+                "run",
+                {
+                  "type": "parameters",
+                  "children": [
+                    "(",
+                    "self",
+                    ")"
+                  ]
+                },
+                ":",
+                {
+                  "type": "block",
+                  "children": [
+                    {
+                      "type": "with_statement",
+                      "children": [
+                        "async",
+                        "with",
+                        {
+                          "type": "with_clause",
+                          "children": [
+                            {
+                              "type": "with_item",
+                              "children": [
+                                {
+                                  "type": "as_pattern",
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "aiohttp",
+                                            ".",
+                                            "ClientSession"
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "children": [
+                                            "(",
+                                            ")"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "as",
+                                    {
+                                      "type": "as_pattern_target",
+                                      "children": [
+                                        "session"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            ",",
+                            {
+                              "type": "with_item",
+                              "children": [
+                                {
+                                  "type": "as_pattern",
+                                  "children": [
+                                    {
+                                      "type": "call",
+                                      "children": [
+                                        "db_connection",
+                                        {
+                                          "type": "argument_list",
+                                          "children": [
+                                            "(",
+                                            {
+                                              "type": "string",
+                                              "children": [
+                                                "'",
+                                                "scraper.db",
+                                                "'"
+                                              ]
+                                            },
+                                            ")"
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    "as",
+                                    {
+                                      "type": "as_pattern_target",
+                                      "children": [
+                                        "db"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        ":",
+                        {
+                          "type": "block",
+                          "children": [
+                            {
+                              "type": "expression_statement",
+                              "children": [
+                                {
+                                  "type": "await",
+                                  "children": [
+                                    "await",
+                                    {
+                                      "type": "call",
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "db",
+                                            ".",
+                                            "execute"
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "children": [
+                                            "(",
+                                            {
+                                              "type": "string",
+                                              "children": [
+                                                "\"",
+                                                "CREATE TABLE IF NOT EXISTS pages (url TEXT, title TEXT)",
+                                                "\""
+                                              ]
+                                            },
+                                            ")"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "children": [
+                                {
+                                  "type": "await",
+                                  "children": [
+                                    "await",
+                                    {
+                                      "type": "call",
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "db",
+                                            ".",
+                                            "commit"
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "children": [
+                                            "(",
+                                            ")"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "children": [
+                                {
+                                  "type": "assignment",
+                                  "children": [
+                                    "tasks",
+                                    "=",
+                                    {
+                                      "type": "list",
+                                      "children": [
+                                        "[",
+                                        "]"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "for_statement",
+                              "children": [
+                                "for",
+                                "url",
+                                "in",
+                                {
+                                  "type": "attribute",
+                                  "children": [
+                                    "self",
+                                    ".",
+                                    "urls"
+                                  ]
+                                },
+                                ":",
+                                {
+                                  "type": "block",
+                                  "children": [
+                                    {
+                                      "type": "expression_statement",
+                                      "children": [
+                                        {
+                                          "type": "assignment",
+                                          "children": [
+                                            "task",
+                                            "=",
+                                            {
+                                              "type": "call",
+                                              "children": [
+                                                {
+                                                  "type": "attribute",
+                                                  "children": [
+                                                    "asyncio",
+                                                    ".",
+                                                    "create_task"
+                                                  ]
+                                                },
+                                                {
+                                                  "type": "argument_list",
+                                                  "children": [
+                                                    "(",
+                                                    {
+                                                      "type": "call",
+                                                      "children": [
+                                                        {
+                                                          "type": "attribute",
+                                                          "children": [
+                                                            "self",
+                                                            ".",
+                                                            "scrape"
+                                                          ]
+                                                        },
+                                                        {
+                                                          "type": "argument_list",
+                                                          "children": [
+                                                            "(",
+                                                            "session",
+                                                            ",",
+                                                            "db",
+                                                            ",",
+                                                            "url",
+                                                            ")"
+                                                          ]
+                                                        }
+                                                      ]
+                                                    },
+                                                    ")"
+                                                  ]
+                                                }
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "expression_statement",
+                                      "children": [
+                                        {
+                                          "type": "call",
+                                          "children": [
+                                            {
+                                              "type": "attribute",
+                                              "children": [
+                                                "tasks",
+                                                ".",
+                                                "append"
+                                              ]
+                                            },
+                                            {
+                                              "type": "argument_list",
+                                              "children": [
+                                                "(",
+                                                "task",
+                                                ")"
+                                              ]
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "type": "expression_statement",
+                              "children": [
+                                {
+                                  "type": "await",
+                                  "children": [
+                                    "await",
+                                    {
+                                      "type": "call",
+                                      "children": [
+                                        {
+                                          "type": "attribute",
+                                          "children": [
+                                            "asyncio",
+                                            ".",
+                                            "gather"
+                                          ]
+                                        },
+                                        {
+                                          "type": "argument_list",
+                                          "children": [
+                                            "(",
+                                            {
+                                              "type": "list_splat",
+                                              "children": [
+                                                "*",
+                                                "tasks"
+                                              ]
+                                            },
+                                            ")"
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "function_definition",
+              "children": [
+                "async",
+                "def",
+                "scrape",
+                {
+                  "type": "parameters",
+                  "children": [
+                    "(",
+                    "self",
+                    ",",
+                    "session",
+                    ",",
+                    "db",
+                    ",",
+                    "url",
+                    ")"
+                  ]
+                },
+                ":",
+                {
+                  "type": "block",
+                  "children": [
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment",
+                          "children": [
+                            "html",
+                            "=",
+                            {
+                              "type": "await",
+                              "children": [
+                                "await",
+                                {
+                                  "type": "call",
+                                  "children": [
+                                    {
+                                      "type": "attribute",
+                                      "children": [
+                                        "self",
+                                        ".",
+                                        "fetch"
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "children": [
+                                        "(",
+                                        "session",
+                                        ",",
+                                        "url",
+                                        ")"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "assignment",
+                          "children": [
+                            "title",
+                            "=",
+                            {
+                              "type": "await",
+                              "children": [
+                                "await",
+                                {
+                                  "type": "call",
+                                  "children": [
+                                    {
+                                      "type": "attribute",
+                                      "children": [
+                                        "self",
+                                        ".",
+                                        "parse"
+                                      ]
+                                    },
+                                    {
+                                      "type": "argument_list",
+                                      "children": [
+                                        "(",
+                                        "html",
+                                        ")"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "expression_statement",
+                      "children": [
+                        {
+                          "type": "await",
+                          "children": [
+                            "await",
+                            {
+                              "type": "call",
+                              "children": [
+                                {
+                                  "type": "attribute",
+                                  "children": [
+                                    "self",
+                                    ".",
+                                    "save"
+                                  ]
+                                },
+                                {
+                                  "type": "argument_list",
+                                  "children": [
+                                    "(",
+                                    "db",
+                                    ",",
+                                    "url",
+                                    ",",
+                                    "title",
+                                    ")"
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "# List of URLs to scrape",
+    {
+      "type": "expression_statement",
+      "children": [
+        {
+          "type": "assignment",
+          "children": [
+            "urls",
+            "=",
+            {
+              "type": "list",
+              "children": [
+                "[",
+                {
+                  "type": "string",
+                  "children": [
+                    "\"",
+                    "https://www.example.com",
+                    "\""
+                  ]
+                },
+                ",",
+                {
+                  "type": "string",
+                  "children": [
+                    "\"",
+                    "https://www.python.org",
+                    "\""
+                  ]
+                },
+                ",",
+                {
+                  "type": "string",
+                  "children": [
+                    "\"",
+                    "https://www.openai.com",
+                    "\""
+                  ]
+                },
+                "]"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "# Run the scraper",
+    {
+      "type": "expression_statement",
+      "children": [
+        {
+          "type": "assignment",
+          "children": [
+            "scraper",
+            "=",
+            {
+              "type": "call",
+              "children": [
+                "Scraper",
+                {
+                  "type": "argument_list",
+                  "children": [
+                    "(",
+                    "urls",
+                    ")"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "expression_statement",
+      "children": [
+        {
+          "type": "call",
+          "children": [
+            {
+              "type": "attribute",
+              "children": [
+                "asyncio",
+                ".",
+                "run"
+              ]
+            },
+            {
+              "type": "argument_list",
+              "children": [
+                "(",
+                {
+                  "type": "call",
+                  "children": [
+                    {
+                      "type": "attribute",
+                      "children": [
+                        "scraper",
+                        ".",
+                        "run"
+                      ]
+                    },
+                    {
+                      "type": "argument_list",
+                      "children": [
+                        "(",
+                        ")"
+                      ]
+                    }
+                  ]
+                },
+                ")"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

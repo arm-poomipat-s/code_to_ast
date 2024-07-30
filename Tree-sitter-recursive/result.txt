@@ -1,0 +1,469 @@
+Module(
+    body=[
+        Import(
+            names=[
+                alias(name='aiohttp')]),
+        Import(
+            names=[
+                alias(name='asyncio')]),
+        Import(
+            names=[
+                alias(name='aiofiles')]),
+        Import(
+            names=[
+                alias(name='aiosqlite')]),
+        ImportFrom(
+            module='bs4',
+            names=[
+                alias(name='BeautifulSoup')],
+            level=0),
+        ImportFrom(
+            module='contextlib',
+            names=[
+                alias(name='asynccontextmanager')],
+            level=0),
+        AsyncFunctionDef(
+            name='db_connection',
+            args=arguments(
+                posonlyargs=[],
+                args=[
+                    arg(arg='database')],
+                kwonlyargs=[],
+                kw_defaults=[],
+                defaults=[]),
+            body=[
+                Assign(
+                    targets=[
+                        Name(id='conn', ctx=Store())],
+                    value=Await(
+                        value=Call(
+                            func=Attribute(
+                                value=Name(id='aiosqlite', ctx=Load()),
+                                attr='connect',
+                                ctx=Load()),
+                            args=[
+                                Name(id='database', ctx=Load())],
+                            keywords=[]))),
+                Try(
+                    body=[
+                        Expr(
+                            value=Yield(
+                                value=Name(id='conn', ctx=Load())))],
+                    handlers=[],
+                    orelse=[],
+                    finalbody=[
+                        Expr(
+                            value=Await(
+                                value=Call(
+                                    func=Attribute(
+                                        value=Name(id='conn', ctx=Load()),
+                                        attr='close',
+                                        ctx=Load()),
+                                    args=[],
+                                    keywords=[])))])],
+            decorator_list=[
+                Name(id='asynccontextmanager', ctx=Load())]),
+        FunctionDef(
+            name='log_decorator',
+            args=arguments(
+                posonlyargs=[],
+                args=[
+                    arg(arg='func')],
+                kwonlyargs=[],
+                kw_defaults=[],
+                defaults=[]),
+            body=[
+                AsyncFunctionDef(
+                    name='wrapper',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[],
+                        vararg=arg(arg='args'),
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        kwarg=arg(arg='kwargs'),
+                        defaults=[]),
+                    body=[
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    JoinedStr(
+                                        values=[
+                                            Constant(value='Calling '),
+                                            FormattedValue(
+                                                value=Attribute(
+                                                    value=Name(id='func', ctx=Load()),
+                                                    attr='__name__',
+                                                    ctx=Load()),
+                                                conversion=-1),
+                                            Constant(value=' with '),
+                                            FormattedValue(
+                                                value=Name(id='args', ctx=Load()),
+                                                conversion=-1),
+                                            Constant(value=' and '),
+                                            FormattedValue(
+                                                value=Name(id='kwargs', ctx=Load()),
+                                                conversion=-1)])],
+                                keywords=[])),
+                        Assign(
+                            targets=[
+                                Name(id='result', ctx=Store())],
+                            value=Await(
+                                value=Call(
+                                    func=Name(id='func', ctx=Load()),
+                                    args=[
+                                        Starred(
+                                            value=Name(id='args', ctx=Load()),
+                                            ctx=Load())],
+                                    keywords=[
+                                        keyword(
+                                            value=Name(id='kwargs', ctx=Load()))]))),
+                        Expr(
+                            value=Call(
+                                func=Name(id='print', ctx=Load()),
+                                args=[
+                                    JoinedStr(
+                                        values=[
+                                            Constant(value='Finished '),
+                                            FormattedValue(
+                                                value=Attribute(
+                                                    value=Name(id='func', ctx=Load()),
+                                                    attr='__name__',
+                                                    ctx=Load()),
+                                                conversion=-1),
+                                            Constant(value=' with result '),
+                                            FormattedValue(
+                                                value=Name(id='result', ctx=Load()),
+                                                conversion=-1)])],
+                                keywords=[])),
+                        Return(
+                            value=Name(id='result', ctx=Load()))],
+                    decorator_list=[]),
+                Return(
+                    value=Name(id='wrapper', ctx=Load()))],
+            decorator_list=[]),
+        ClassDef(
+            name='Scraper',
+            bases=[],
+            keywords=[],
+            body=[
+                FunctionDef(
+                    name='__init__',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self'),
+                            arg(arg='urls')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Attribute(
+                                    value=Name(id='self', ctx=Load()),
+                                    attr='urls',
+                                    ctx=Store())],
+                            value=Name(id='urls', ctx=Load()))],
+                    decorator_list=[]),
+                AsyncFunctionDef(
+                    name='fetch',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self'),
+                            arg(arg='session'),
+                            arg(arg='url')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        AsyncWith(
+                            items=[
+                                withitem(
+                                    context_expr=Call(
+                                        func=Attribute(
+                                            value=Name(id='session', ctx=Load()),
+                                            attr='get',
+                                            ctx=Load()),
+                                        args=[
+                                            Name(id='url', ctx=Load())],
+                                        keywords=[]),
+                                    optional_vars=Name(id='response', ctx=Store()))],
+                            body=[
+                                Return(
+                                    value=Await(
+                                        value=Call(
+                                            func=Attribute(
+                                                value=Name(id='response', ctx=Load()),
+                                                attr='text',
+                                                ctx=Load()),
+                                            args=[],
+                                            keywords=[])))])],
+                    decorator_list=[
+                        Name(id='log_decorator', ctx=Load())]),
+                AsyncFunctionDef(
+                    name='parse',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self'),
+                            arg(arg='html')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Name(id='soup', ctx=Store())],
+                            value=Call(
+                                func=Name(id='BeautifulSoup', ctx=Load()),
+                                args=[
+                                    Name(id='html', ctx=Load()),
+                                    Constant(value='html.parser')],
+                                keywords=[])),
+                        Return(
+                            value=IfExp(
+                                test=Attribute(
+                                    value=Name(id='soup', ctx=Load()),
+                                    attr='title',
+                                    ctx=Load()),
+                                body=Attribute(
+                                    value=Attribute(
+                                        value=Name(id='soup', ctx=Load()),
+                                        attr='title',
+                                        ctx=Load()),
+                                    attr='string',
+                                    ctx=Load()),
+                                orelse=Constant(value='No Title')))],
+                    decorator_list=[
+                        Name(id='log_decorator', ctx=Load())]),
+                AsyncFunctionDef(
+                    name='save',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self'),
+                            arg(arg='db'),
+                            arg(arg='url'),
+                            arg(arg='title')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        AsyncWith(
+                            items=[
+                                withitem(
+                                    context_expr=Call(
+                                        func=Attribute(
+                                            value=Name(id='db', ctx=Load()),
+                                            attr='execute',
+                                            ctx=Load()),
+                                        args=[
+                                            Constant(value='INSERT INTO pages (url, title) VALUES (?, ?)'),
+                                            Tuple(
+                                                elts=[
+                                                    Name(id='url', ctx=Load()),
+                                                    Name(id='title', ctx=Load())],
+                                                ctx=Load())],
+                                        keywords=[]))],
+                            body=[
+                                Expr(
+                                    value=Await(
+                                        value=Call(
+                                            func=Attribute(
+                                                value=Name(id='db', ctx=Load()),
+                                                attr='commit',
+                                                ctx=Load()),
+                                            args=[],
+                                            keywords=[])))])],
+                    decorator_list=[
+                        Name(id='log_decorator', ctx=Load())]),
+                AsyncFunctionDef(
+                    name='run',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        AsyncWith(
+                            items=[
+                                withitem(
+                                    context_expr=Call(
+                                        func=Attribute(
+                                            value=Name(id='aiohttp', ctx=Load()),
+                                            attr='ClientSession',
+                                            ctx=Load()),
+                                        args=[],
+                                        keywords=[]),
+                                    optional_vars=Name(id='session', ctx=Store())),
+                                withitem(
+                                    context_expr=Call(
+                                        func=Name(id='db_connection', ctx=Load()),
+                                        args=[
+                                            Constant(value='scraper.db')],
+                                        keywords=[]),
+                                    optional_vars=Name(id='db', ctx=Store()))],
+                            body=[
+                                Expr(
+                                    value=Await(
+                                        value=Call(
+                                            func=Attribute(
+                                                value=Name(id='db', ctx=Load()),
+                                                attr='execute',
+                                                ctx=Load()),
+                                            args=[
+                                                Constant(value='CREATE TABLE IF NOT EXISTS pages (url TEXT, title TEXT)')],
+                                            keywords=[]))),
+                                Expr(
+                                    value=Await(
+                                        value=Call(
+                                            func=Attribute(
+                                                value=Name(id='db', ctx=Load()),
+                                                attr='commit',
+                                                ctx=Load()),
+                                            args=[],
+                                            keywords=[]))),
+                                Assign(
+                                    targets=[
+                                        Name(id='tasks', ctx=Store())],
+                                    value=List(elts=[], ctx=Load())),
+                                For(
+                                    target=Name(id='url', ctx=Store()),
+                                    iter=Attribute(
+                                        value=Name(id='self', ctx=Load()),
+                                        attr='urls',
+                                        ctx=Load()),
+                                    body=[
+                                        Assign(
+                                            targets=[
+                                                Name(id='task', ctx=Store())],
+                                            value=Call(
+                                                func=Attribute(
+                                                    value=Name(id='asyncio', ctx=Load()),
+                                                    attr='create_task',
+                                                    ctx=Load()),
+                                                args=[
+                                                    Call(
+                                                        func=Attribute(
+                                                            value=Name(id='self', ctx=Load()),
+                                                            attr='scrape',
+                                                            ctx=Load()),
+                                                        args=[
+                                                            Name(id='session', ctx=Load()),
+                                                            Name(id='db', ctx=Load()),
+                                                            Name(id='url', ctx=Load())],
+                                                        keywords=[])],
+                                                keywords=[])),
+                                        Expr(
+                                            value=Call(
+                                                func=Attribute(
+                                                    value=Name(id='tasks', ctx=Load()),
+                                                    attr='append',
+                                                    ctx=Load()),
+                                                args=[
+                                                    Name(id='task', ctx=Load())],
+                                                keywords=[]))],
+                                    orelse=[]),
+                                Expr(
+                                    value=Await(
+                                        value=Call(
+                                            func=Attribute(
+                                                value=Name(id='asyncio', ctx=Load()),
+                                                attr='gather',
+                                                ctx=Load()),
+                                            args=[
+                                                Starred(
+                                                    value=Name(id='tasks', ctx=Load()),
+                                                    ctx=Load())],
+                                            keywords=[])))])],
+                    decorator_list=[]),
+                AsyncFunctionDef(
+                    name='scrape',
+                    args=arguments(
+                        posonlyargs=[],
+                        args=[
+                            arg(arg='self'),
+                            arg(arg='session'),
+                            arg(arg='db'),
+                            arg(arg='url')],
+                        kwonlyargs=[],
+                        kw_defaults=[],
+                        defaults=[]),
+                    body=[
+                        Assign(
+                            targets=[
+                                Name(id='html', ctx=Store())],
+                            value=Await(
+                                value=Call(
+                                    func=Attribute(
+                                        value=Name(id='self', ctx=Load()),
+                                        attr='fetch',
+                                        ctx=Load()),
+                                    args=[
+                                        Name(id='session', ctx=Load()),
+                                        Name(id='url', ctx=Load())],
+                                    keywords=[]))),
+                        Assign(
+                            targets=[
+                                Name(id='title', ctx=Store())],
+                            value=Await(
+                                value=Call(
+                                    func=Attribute(
+                                        value=Name(id='self', ctx=Load()),
+                                        attr='parse',
+                                        ctx=Load()),
+                                    args=[
+                                        Name(id='html', ctx=Load())],
+                                    keywords=[]))),
+                        Expr(
+                            value=Await(
+                                value=Call(
+                                    func=Attribute(
+                                        value=Name(id='self', ctx=Load()),
+                                        attr='save',
+                                        ctx=Load()),
+                                    args=[
+                                        Name(id='db', ctx=Load()),
+                                        Name(id='url', ctx=Load()),
+                                        Name(id='title', ctx=Load())],
+                                    keywords=[])))],
+                    decorator_list=[])],
+            decorator_list=[]),
+        Assign(
+            targets=[
+                Name(id='urls', ctx=Store())],
+            value=List(
+                elts=[
+                    Constant(value='https://www.example.com'),
+                    Constant(value='https://www.python.org'),
+                    Constant(value='https://www.openai.com')],
+                ctx=Load())),
+        Assign(
+            targets=[
+                Name(id='scraper', ctx=Store())],
+            value=Call(
+                func=Name(id='Scraper', ctx=Load()),
+                args=[
+                    Name(id='urls', ctx=Load())],
+                keywords=[])),
+        Expr(
+            value=Call(
+                func=Attribute(
+                    value=Name(id='asyncio', ctx=Load()),
+                    attr='run',
+                    ctx=Load()),
+                args=[
+                    Call(
+                        func=Attribute(
+                            value=Name(id='scraper', ctx=Load()),
+                            attr='run',
+                            ctx=Load()),
+                        args=[],
+                        keywords=[])],
+                keywords=[]))],
+    type_ignores=[])
